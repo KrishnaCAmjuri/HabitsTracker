@@ -1,0 +1,6 @@
+framework module Pods_Me_N_Myself {
+  umbrella header "Pods-Me_N_Myself-umbrella.h"
+
+  export *
+  module * { export * }
+}
