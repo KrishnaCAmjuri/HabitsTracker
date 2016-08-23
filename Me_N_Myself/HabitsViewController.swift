@@ -11,6 +11,7 @@ import UIKit
 var SHOULDLOCK:Bool = true
 private let reuseIdentifier = "reuseIdentifier"
 private let LOCK = 23
+
 class HabitsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let tableView: UITableView = UITableView()
@@ -23,16 +24,7 @@ class HabitsViewController: UIViewController, UITableViewDataSource, UITableView
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        let lockView: LockView = LockView(frame: UIScreen.mainScreen().bounds)
-        lockView.tag = LOCK
-        if let parent = self.parentViewController {
-            parent.view.addSubview(lockView)
-            lockView.snp_makeConstraints(closure: { (make) in
-                make.edges.equalTo(lockView.superview!)
-            })
-        }
-        
+                
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
